@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    
+    <div id="calculator-app">
+        <div id="put-panel" class="input-number-place">
+            {{currentValue || '0'}}
+        </div>
+        <div id="result-panel">
+            {{result}}
+        </div>
+        <div id="buttons-panel">
+            <div id="number-block">
+                <div class="number-button-row">
+                    <button v-on:click="append('7')" type="button">7</button>
+                    <button v-on:click="append('8')" type="button">8</button>
+                    <button v-on:click="append('9')" type="button">9</button>
+                </div>
+                <div class="number-button-row">
+                    <button v-on:click="append('4')" type="button">4</button>
+                    <button v-on:click="append('5')" type="button">5</button>
+                    <button v-on:click="append('6')" type="button">6</button>
+                </div>
+                <div class="number-button-row">
+                    <button v-on:click="append('1')" type="button">1</button>
+                    <button v-on:click="append('2')" type="button">2</button>
+                    <button v-on:click="append('3')" type="button">3</button>
+                </div>
+                <div class="number-button-row">
+                    <button v-on:click="append('0')" id="zero-button" type="button">0</button>
+                    <button v-on:click="dot" type="button">.</button>
+                </div>
+            </div>
+            <div id="operation-block">
+                <div class="number-button-row">
+                    <button id="clear-button" type="button" v-on:click="clear" style="font-size: 20px; background-color: red; color: #fff">Clear...</button>
+                    <button type="button" v-on:click="backspace()" style="font-size: 20px; background-color: red; color: #fff">Back</button>
+                    <button type="button" v-on:click="module()" style="font-size: 20px">mod</button>
+                </div>
+                <div class="number-button-row">
+                    <button type="button" v-on:click="devide()" style="background-color: orange">/</button>
+                    <button type="button" v-on:click="multiply()" style="background-color: orange">x</button>
+                    <button type="button" v-on:click="percent()">%</button>
+                </div>
+                <div class="number-button-row">
+                    <button type="button" v-on:click="minus()" style="background-color: orange">-</button>
+                    <button type="button" v-on:click="add()" style="background-color: orange">+</button>
+                    <button type="button" v-on:click="plusMinus()">+/-</button>
+                    <button type="button" v-on:click="numberPI()" style="font-size: 20px;">pi</button>
+                </div>
+                <div class="number-button-row">
+                    <button v-on:click="answer()" type="button" style="background-color: green">=</button>
+                    <button id="power-button" type="button" v-on:click="power()">x<sup>2</sup></button>
+                    <button id="power-button" type="button" v-on:click="sqrtValue()">sqrt(x)</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
